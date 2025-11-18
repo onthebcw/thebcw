@@ -1,0 +1,408 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.background-image {
+    background-image: url('../../pics/20150630_132626.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Color Variables */
+:root {
+    --primary-color: black;
+    --hover-link-color: #f0f7ff;
+    --scrolled-link-color: #555;
+    --footer-bg-color: #222;
+    --footer-text-color: white;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    right: 0;
+    height: 100px; /* Height to accommodate both logo and navigation */
+    background-color: rgba(255, 0, 0, 0); /* Fully transparent by default */
+    display: flex;
+    flex-direction: column; /* Stack logo and navigation vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    z-index: 10; /* Ensure the header is above other content */
+    transition: background-color 0.3s; /* Smooth transition for background color */
+}
+
+.header.scrolled {
+    background-color: rgba(255, 255, 255, 0.2); /* Change background color to almost transparent white when scrolled */
+}
+
+/* Logo Styles */
+.logo {
+    text-decoration: none;
+    color: white;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px; 
+    margin-top: -5px;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.header.scrolled .logo {
+    color: black; /* Change logo color when scrolled */
+}
+
+/* Header Navigation Styles */
+.header nav {
+    margin-top: 10px; /* Space between the logo and navigation */
+}
+
+.header nav ul {
+    display: flex; /* Align list items horizontally */
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.header nav ul li {
+    margin: 0 15px; /* Space between list items */
+}
+
+.header nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #000; /* Default link color */
+    font-weight: bold; /* Bold link text */
+    padding: 10px; /* Added padding for better clickable area */
+    transition: color 0.3s ease; /* Smooth transition for color changes */
+}
+
+.header nav ul li a:hover {
+    color: #007bff; /* Default color change for all links on hover */
+}
+
+.header nav ul li a.active {
+    color: #0056b3; /* Active link color */
+}
+
+.header nav ul li a.active:hover {
+    color: #007bff; /* Brighter color for hovered active link */
+}
+
+.header-links a.first-link {
+    color: black;
+    transition: color 0.3s ease;
+}
+
+/* Cart Wrapper Styles */
+.cart-wrapper {
+    display: flex; /* Use flex for layout */
+    align-items: center; /* Center the icon vertically */
+    margin-left: 15px; /* Space between cart icon and other links */
+}
+
+/* Cart Icon Styles */
+.cart-icon {
+    max-width: 40px;
+    max-height: 40px;
+    transition: transform 0.3s ease;
+    display: flex; /* Use flex to center the icon if needed */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    padding: 0px;
+    position: relative;
+    z-index: 10; /* Raise above other elements */
+    cursor: pointer;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1); /* Grow on hover */
+}
+
+.cart-icon.active {
+    background-color: rgba(255, 255, 0, 0.2); /* Optional highlight color */
+    border-radius: 5px; /* Optional styling for roundness */
+}
+
+/* Sidebar Styles */
+.shopping-sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px; 
+    height: 100%; 
+    background-color: white; 
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5); 
+    padding: 20px; 
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Hidden by default */
+    z-index: 100; 
+}
+
+.shopping-sidebar.open {
+    transform: translateX(0); /* Show the sidebar */
+}
+
+.shopping-sidebar .close {
+    cursor: pointer;
+    font-size: 30px;
+    padding: 10px;
+    color: black;
+    background-color: transparent; /* Ensures it's overlaying correctly */
+}
+
+.sidebar-header {
+    color: black;
+    font-size: 1.25em;
+}
+
+.sidebar-paragraph {
+    color: black;
+    font-size: 1em;
+    line-height: 1.4; /* Maintain readability */
+}
+
+#cartContents {
+    margin-top: 20px; /* Space between header and items */
+    font-size: 16px; /* Font size for readability */
+}
+
+#cartContents p {
+    margin: 10px 0; /* Space between items */
+}
+
+#cartContents div {
+    display: flex; /* Horizontally align item name and buttons */
+    justify-content: space-between; /* Space out item details and buttons */
+    align-items: center; /* Vertically align buttons with item text */
+}
+
+#cartContents button {
+    cursor: pointer; /* Change cursor to indicate clickable */
+    background-color: #007bff; /* Example button color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    padding: 5px 10px; /* Padding for buttons */
+    margin-left: 5px; /* Space between buttons */
+    transition: background-color 0.3s; /* Transition effect on hover */
+}
+
+#cartContents button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Header Navigation Styles continued*/
+.header.scrolled .header-links a.first-link {
+    color: white; /* Color when scrolled */
+}
+
+.header.scrolled .header-links a.first-link:hover {
+    color: #e3f0ff; /* Hover color for first link when scrolled */
+}
+
+.container {
+    position: relative;
+    width: 80%;
+    max-width: 400px;
+    height: 200px;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    text-align: center;
+    padding: 20px; /* Added padding inside the container */
+}
+
+.overlay {
+    color: white; /* Text color for overlay */
+}
+
+.inquiry {
+    font-size: 24px; /* Inquiry text size */
+    margin: 0; /* Reset margin */
+}
+
+.email {
+    font-size: 20px; /* Email text size */
+    margin: 5px 0 0 0; /* Margin above the email */
+}
+
+.email a {
+    color: white; /* Keep the link color white */
+    text-decoration: none;
+    position: relative; /* Required for the pseudo-element positioning */
+    transition: transform 0.3s ease;
+}
+
+.email a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* Position it just below the text */
+    height: 2px; /* Underline thickness */
+    width: 100%; /* Full width of the text */
+    background-color: white; /* Color of the underline */
+    transform: scaleX(0); /* Start hidden */
+    transition: transform 0.3s ease; /* Animate the scale */
+}
+
+.email a:hover {
+    color: white;  
+}
+
+.email a:hover::after {
+    transform: scaleX(1); /* Show the underline on hover */
+}
+
+/* Footer Styles */
+footer {
+    display: flex;
+    justify-content: center;
+    background-color: var(--footer-bg-color);
+    padding: 20px;
+    color: var(--footer-text-color);
+    width: 100%;
+    left: 0; /* Positions footer to the left */
+    min-height: 60px;
+    max-height: 120px;
+    overflow: hidden;
+}
+
+/* Footer Paragraph Styles */
+footer p {
+    text-decoration: none;
+    color: white;
+    padding-top: 0;
+    text-align: center;
+}
+
+.social-icon {
+    margin-left: 15px; /* Space between icons */
+    margin-top: 1.5px;
+    color: white; /* Icon color */
+    text-decoration: none;
+}
+
+.terms-icon {
+    color: #a28564;
+}
+
+.terms-icon:hover {
+    color: #917350;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+.privacy-policy-icon {
+    color: #75A264;
+}
+
+.privacy-policy-icon:hover {
+    color: #629150;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+.purchase-policy-icon {
+    color: #5F7BE0;
+}
+
+.purchase-policy-icon:hover {
+    color: #4562cb;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+.youtube-icon {
+    color: #c74444;
+}
+
+.youtube-icon:hover {
+    color: #AB3131;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+.instagram-icon {
+    color: #9042DF;
+}
+
+.instagram-icon:hover {
+    color: #7e2ccb;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .header nav ul {
+        padding: 0px; /* Add padding for mobile mode */
+    }
+
+    .header nav ul li {
+        margin: 0 5px; /* Decrease spacing between links */
+    }
+
+    .social-icon {
+        margin-left: 15px; /* Space between icons */
+        margin-top: 2.5px;
+        color: white;
+        font-size: 0.9em;
+        text-decoration: none;
+    }
+
+    .terms-icon {
+        font-size: 0.9em;
+    }
+
+    .terms-icon:hover {
+        font-size: 0.9em;
+    }
+
+    .privacy-policy-icon {
+        font-size: 0.9em;
+    }
+
+    .privacy-policy-icon:hover {
+        font-size: 0.9em;
+    }
+
+    .purchase-policy-icon {
+        font-size: 0.9em;
+    }
+
+    .purchase-policy-icon:hover {
+        font-size: 0.9em;
+    }
+
+    .youtube-icon {
+        color: #c74444;
+        font-size: 0.9em;
+    }
+
+    .youtube-icon:hover {
+        font-size: 0.9em;
+    }
+
+    .instagram-icon {
+        color: #9042DF;
+        font-size: 0.9em;
+    }
+
+    .instagram-icon:hover {
+        font-size: 0.9em;
+    }
+}

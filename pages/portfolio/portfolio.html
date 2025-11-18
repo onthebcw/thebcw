@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio for 釦ちぇ木. Reach out for inquiries.">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css">
+    <link rel="icon" type="image/x-icon" href="../../pics/おいちい.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+
+<body>
+<header class="header">
+    <a href="../../pages/index/index.html" class="logo">釦ちぇ木</a>
+    <nav>
+        <ul class="header-links">
+            <li><a href="../../pages/index/index.html">Home</a></li>
+            <li><a href="../../pages/about/about.html">About</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="../../pages/contacts/contacts.html">Contacts</a></li>
+            <li><a href="../../pages/store/store.html">Store</a></li>
+            <li class="cart-wrapper">
+                <div class="cart-icon" onclick="openCart();">
+                    <i class="fa-solid fa-bag-shopping cart-icon" alt="Shopping Bag"></i>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Sidebar for the Shopping Cart -->
+<div id="shoppingSidebar" class="shopping-sidebar">
+    <span class="close" onclick="closeCart()">&times;</span>
+    <h2 class="sidebar-header">Your Shopping Bag</h2>
+    <div id="cartContents">
+        <p class="sidebar-paragraph">Your cart is currently empty.</p> <!-- Placeholder for items -->
+    </div>
+</div>
+	
+    <div class="gallery">
+        <img src="../../portfo/20170427_213805.jpg" alt="kiwi cup" onclick="openLightbox();currentSlide(1)">
+        <img src="../../portfo/20180826_171025.jpg" alt="sushi mix" onclick="openLightbox();currentSlide(2)">
+        <img src="../../portfo/20160409_142054.jpg" alt="fruit mix" onclick="openLightbox();currentSlide(3)">
+        <img src="../../portfo/20160412_114843.jpg" alt="paint palette" onclick="openLightbox();currentSlide(4)">
+
+        <img src="../../portfo/20150630_114526_HDR.jpg" alt="jing top" onclick="openLightbox();currentSlide(5)">
+        <img src="../../portfo/20150720_171153.jpg" alt="songtown view" onclick="openLightbox();currentSlide(6)">
+        <img src="../../portfo/20150724_110210.jpg" alt="pearl view" onclick="openLightbox();currentSlide(7)">
+        <img src="../../portfo/20150723_123431.jpg" alt="wuzhen lake" onclick="openLightbox();currentSlide(8)">
+
+        <img src="../../portfo/20150724_105615.jpg" alt="wide street" onclick="openLightbox();currentSlide(9)">
+        <img src="../../portfo/20150702_155126.jpg" alt="top view" onclick="openLightbox();currentSlide(10)">
+        <img src="../../pics/04 v3.png" alt="fash04" onclick="openLightbox();currentSlide(11)">
+        <img src="../../portfo/20150724_095345.jpg" alt="close up" onclick="openLightbox();currentSlide(12)">
+    </div>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <div class="lightbox-content">
+            <img class="lightbox-image" id="lightbox-image" src="">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 釦ちぇ木. All Rights Reserved</p>
+
+    <a href="../../pages/terms/terms.html" alt="Terms" class="social-icon terms-icon" aria-label="Terms and Conditions">
+       <i class="fa-solid fa-book terms-icon" aria-hidden="true"></i>
+    </a>
+
+    <a href="../../pages/privacy policy/privacy policy.html" alt="Privacy Policy" class="social-icon privacy-policy-icon" aria-label="Privacy Policy">
+       <i class="fa-solid fa-file-lines privacy-policy-icon" aria-hidden="true"></i>
+    </a>
+
+    <a href="../../pages/purchase policy/purchase policy.html" alt="Purchase Policy" class="social-icon purchase-policy-icon">
+        <i class="fas fa-tags purchase-policy-icon" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://youtube.com/@landon_n_n" alt="YouTube" target="_blank" rel="noopener noreferrer" class="social-icon youtube-icon" aria-hidden="YouTube Channel">
+        <i class="fab fa-youtube" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://instagram.com/landon_n_n" alt="Instagram" target="_blank" rel="noopener noreferrer" class="social-icon instagram-icon" aria-hidden="Instagram Profile">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+    </a>
+    </footer>
+
+    <script src="portfolio.js" defer></script>
+
+</body>
+</html>

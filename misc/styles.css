@@ -1,0 +1,168 @@
+/* ========= RESET & BASE ========= */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height:100%; }
+:root {
+  --header-height: 84px;
+  --primary: #111;
+  --accent: #007bff;
+  --bg: #f7f9fb;
+  --card: #fff;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif; /* default sans-serif for content */
+  background: var(--bg);
+  color: var(--primary);
+  padding-top: var(--header-height); /* shift down for fixed header */
+  line-height: 1.45;
+}
+
+/* header - fixed */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: var(--header-height);
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 20px;
+  background: rgba(0,123,255,0.06);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+/* These elements should use the browser's default font */
+.logo,
+.nav-links a,
+footer p,
+footer a {
+  font-family: initial; /* browser/system default */
+}
+
+/* logo */
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--primary);
+}
+
+/* nav */
+.nav-bar {
+  list-style: none;
+  display:flex;
+  gap: 20px;
+  align-items:center;
+}
+.nav-links a {
+  text-decoration:none;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* cart icon */
+.cart-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+.cart-badge {
+  background: #333;
+  color:#fff;
+  width:20px;height:20px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:12px;line-height:1;
+}
+
+/* main product grid */
+main { padding: 28px; }
+.product-grid {
+  max-width:1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 across */
+  gap: 20px;
+}
+
+/* product card */
+.product-card {
+  background: var(--card);
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(12,24,40,0.04);
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-items:center;
+}
+.product-card img {
+  width:100%;
+  max-width: 240px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.product-title { font-weight:700; font-size:16px; text-align:center; }
+.product-price { font-weight:700; color:var(--accent); }
+.product-actions { display:flex; gap:8px; margin-top: auto; }
+.btn {
+  padding:8px 12px;border-radius:8px;border: none; cursor:pointer;
+  background: var(--accent); color: #fff;
+}
+.btn.secondary { background: #eee; color: #111; }
+
+/* shopping sidebar */
+.shopping-sidebar {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 380px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -10px 0 30px rgba(10,20,30,0.08);
+  z-index: 1100;
+  transition: right 220ms ease;
+  padding: 18px;
+  display:flex;
+  flex-direction:column;
+}
+.shopping-sidebar.open { right: 0; }
+.shopping-sidebar .close {
+  font-size: 22px; border:none; background:transparent; cursor:pointer; align-self:flex-end;
+}
+#cartContents { margin-top: 6px; overflow:auto; flex:1; }
+.cart-item { display:flex; gap:12px; padding:8px 0; border-bottom:1px solid #f1f1f1; align-items:center; }
+.cart-item img { width:64px; height:64px; object-fit:cover; border-radius:6px; }
+.qty-controls { display:flex; gap:6px; align-items:center; }
+
+/* cart footer */
+.cart-footer { margin-top:12px; display:flex; flex-direction:column; gap:10px; }
+.totals { display:flex; justify-content:space-between; align-items:center; font-weight:700; }
+
+/* toast */
+.toast-container { position: fixed; bottom: 20px; right: 20px; z-index: 1200; display:flex; flex-direction:column; gap:8px; }
+.toast { background:#333; color:#fff; padding:10px 14px; border-radius:8px; box-shadow:0 6px 18px rgba(0,0,0,0.14); }
+
+/* footer */
+footer {
+  margin-top: 40px;
+  padding: 16px;
+  text-align:center;
+  color:#fff;
+  background:#222;
+}
+
+/* responsive */
+@media (max-width: 1100px) {
+  .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .product-grid { grid-template-columns: repeat(1, 1fr); gap:12px; padding: 12px; }
+  body { padding-top: 110px; } /* header bigger on mobile */
+}

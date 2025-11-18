@@ -1,0 +1,488 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; 
+    margin: 0;  
+}
+
+/* Color Variables */
+:root {
+    --primary-color: black;
+    --hover-link-color: #f0f7ff;
+    --scrolled-link-color: #555;
+    --footer-bg-color: #222;
+    --footer-text-color: white;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    right: 0;
+    height: 100px; 
+    background-color: rgba(0, 123, 255, 0.5);
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 10; 
+    transition: background-color 0.3s; 
+}
+
+.header.scrolled {
+    background-color: rgba(0, 123, 255, 0.2);
+}
+
+/* Logo Styles */
+.logo {
+    text-decoration: none;
+    color: black;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: -5px;
+    transition: color 0.3s;
+}
+
+.header.scrolled .logo {
+    color: black; 
+}
+
+/* Header Navigation Styles */
+.header nav {
+    margin-top: 10px; 
+}
+
+.header nav ul {
+    display: flex; 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.header nav ul li {
+    margin: 0 15px; 
+}
+
+.header nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #000; /* Default link color (black) */
+    font-weight: bold; /* Bold text */
+    padding: 10px; /* Padding for links */
+    transition: color 0.3s ease; /* Smooth transition for color changes */
+}
+
+.header nav ul li a:hover {
+    color: #f0f7ff; /* Default hover color for all links */
+}
+
+.header nav ul li a.active {
+    color: #d8ebff; /* Active link color */
+}
+
+.header nav ul li a.active:hover {
+    color: #f0f7ff; /* Hover color for the active link */
+}
+
+/* Cart Wrapper Styles */
+.cart-wrapper {
+    display: flex; /* Use flex for layout */
+    align-items: center; /* Center the icon vertically */
+    margin-left: 15px; /* Space between cart icon and other links */
+}
+
+/* Cart Icon Styles */
+.cart-icon {
+    max-width: 40px;
+    max-height: 40px;
+    transition: transform 0.3s ease;
+    display: flex; /* Use flex to center the icon if needed */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    padding: 0px;
+    position: relative;
+    z-index: 10; /* Raise above other elements */
+    cursor: pointer;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1); /* Grow on hover */
+}
+
+.cart-icon.active {
+    background-color: rgba(255, 255, 0, 0.2); /* Optional highlight color */
+    border-radius: 5px; /* Optional styling for roundness */
+}
+
+/* Sidebar Styles */
+.shopping-sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: white; 
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5); 
+    padding: 20px; 
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Hidden by default */
+    z-index: 100; 
+}
+
+.shopping-sidebar.open {
+    transform: translateX(0); /* Show the sidebar */
+}
+
+.shopping-sidebar .close {
+    cursor: pointer;
+    font-size: 30px;
+    padding: 10px;
+    color: black;
+    background-color: transparent; /* Ensures it's overlaying correctly */
+}
+
+.sidebar-header {
+    color: black;
+    font-size: 1.25em;
+}
+
+.sidebar-paragraph {
+    color: black;
+    font-size: 1em;
+    line-height: 1.4; /* Maintain readability */
+}
+
+#cartContents {
+    margin-top: 20px; /* Space between header and items */
+    font-size: 16px; /* Font size for readability */
+}
+
+#cartContents p {
+    margin: 10px 0; /* Space between items */
+}
+
+#cartContents div {
+    display: flex; /* Horizontally align item name and buttons */
+    justify-content: space-between; /* Space out item details and buttons */
+    align-items: center; /* Vertically align buttons with item text */
+}
+
+#cartContents button {
+    cursor: pointer; /* Change cursor to indicate clickable */
+    background-color: #007bff; /* Example button color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    padding: 5px 10px; /* Padding for buttons */
+    margin-left: 5px; /* Space between buttons */
+    transition: background-color 0.3s; /* Transition effect on hover */
+}
+
+#cartContents button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Header Navigation Styles continued*/
+.header nav ul li a.scrolled {
+    color: #000; /* Color for all links when scrolled (except active) */
+}
+
+.header nav ul li a.active.scrolled {
+    color: #555; /* Active link's color when scrolled */
+}
+
+.header nav ul li a.scrolled:hover {
+    color: #007bff; /* Color for all links when scrolled and hovered */
+    font-weight: bold; /* Optionally, make it bold */
+    text-shadow: 0 0 0px rgba(0, 86, 179, 0.7); /* Add a subtle glow effect */
+}
+
+/* Main Content Styles */
+.content {
+    flex: 1; /* Allow main content to grow and fill available space */
+    display: flex; /* Center contents if necessary */
+    justify-content: center; /* Center horizontally */
+    align-items: flex-start; /* Keep items at the start for consistent layout */
+    padding: 20px; /* Padding for overall content spacing */
+    margin-top: 100px; /* Add top margin to account for fixed header height */
+}
+
+/* About Section */
+#about-section {
+    max-width: 800px; /* Max width for the section */
+    margin: auto; /* Center the section */
+}
+
+h2 {
+    font-size: 2em; /* Adjust header size */
+    margin-bottom: 0px;
+}
+
+.body-paragraph {
+    font-size: 1.25em; /* Adjust paragraph size */
+    line-height: 1.5; /* Adjust line height for better readability */
+    margin-bottom: 20px; /* Add some margin below the paragraphs */
+}
+
+/* Container for the gallery to ensure center alignment */
+.gallery-container {
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center the gallery horizontally */
+    padding: 20px; /* Add some padding around the container */
+}
+
+.gallery {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Spacing between items */
+    padding: 20px; /* Padding around the gallery for spacing from edges */
+    margin: 0 auto; /* Centers the gallery */
+    width: 90%; /* Responsive width */
+    max-width: 825px; /* Maximum width for larger screens */
+}
+
+.gallery img {
+    width: 100%; /* Ensures images fill their grid area */
+    height: 200px; /* Fixed height to maintain uniformity */
+    max-height: 200px; /* Set a max height for the images */
+    min-height: 150px; /* Ensures smaller images aren't too short */
+    object-fit: cover; /* Maintains aspect ratio while filling the area */
+    border-radius: 8px; /* Optional: adds rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Hide overflow */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+}
+
+.lightbox-content {
+    position: relative;
+    margin: auto;
+    top: 10%;
+    width: 80%; /* Content width */
+    max-width: 700px; /* Max width */
+    padding: 0px; /* Optional: adds padding around the image */
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+.lightbox-image {
+    width: auto; /* Allow image to adjust width */
+    max-width: 100%; /* Ensure image doesn't exceed lightbox width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 80vh; /* Adjust max height to fit within the viewport */
+    display: block; /* Make image a block element */
+    margin: auto; /* Center the image */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Background color on hover */
+}
+
+/* Footer Styles */
+footer {
+    display: flex; 
+    justify-content: center; 
+    background-color: var(--footer-bg-color); 
+    padding: 20px; 
+    color: var(--footer-text-color); 
+    width: 100%; /* Full width */
+    min-height: 60px; /* Minimum height to ensure visibility */
+    max-height: 120px; /* Set a maximum height to prevent excessive stretching */
+    overflow: hidden; /* Hide overflow if content exceeds max height */
+}
+
+/* Footer Paragraph Styles */
+footer p {
+    text-decoration: none;
+    color: white;
+    padding-top: 0;
+    text-align: center;
+}
+
+.social-icon {
+    margin-left: 15px; /* Space between icons */
+    margin-top: 1.5px;
+    color: white; /* Icon color */
+    text-decoration: none;
+}
+
+.terms-icon {
+    color: #ffffff;
+}
+
+.terms-icon:hover {
+    color: #917350;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+.privacy-policy-icon {
+    color: #ffffff;
+}
+
+.privacy-policy-icon:hover {
+    color: #629150;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+.purchase-policy-icon {
+    color: #ffffff;
+}
+
+.purchase-policy-icon:hover {
+    color: #4562cb;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+.youtube-icon {
+    color: #ffffff;
+}
+
+.youtube-icon:hover {
+    color: #bf1e1e;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+.instagram-icon {
+    color: #ffffff;
+}
+
+.instagram-icon:hover {
+    color: #7e2ccb;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .header nav ul {
+        padding: 0px;
+    }
+
+    .header nav ul li {
+        margin: 0 5px;
+    }
+
+    .social-icon {
+        margin-left: 15px; /* Space between icons */
+        margin-top: 2.5px;
+        color: white; /* Icon color */
+        font-size: 0.9em;
+        text-decoration: none;
+    }
+
+    .terms-icon {
+        color: #ffffff;
+        font-size: 0.9em;
+    }
+
+    .terms-icon:hover {
+        color: #917350;
+        transition: color 0.3s;
+        font-size: 0.9em;
+    }
+
+    .privacy-policy-icon {
+        color: #ffffff;
+        font-size: 0.9em;
+    }
+
+    .privacy-policy-icon:hover {
+        color: #629150;
+        transition: color 0.3s;
+        font-size: 0.9em;
+    }
+
+    .purchase-policy-icon {
+        color: #ffffff;
+        font-size: 0.9em;
+    }
+
+    .purchase-policy-icon:hover {
+        color: #4562cb;
+        transition: color 0.3s;
+        font-size: 0.9em;
+    }
+
+    .youtube-icon {
+        color: #ffffff;
+        font-size: 0.9em;
+    }
+
+    .youtube-icon:hover {
+        color: #bf1e1e;
+        transition: color 0.3s;
+        font-size: 0.9em;
+    }
+
+    .instagram-icon {
+        color: #ffffff;
+        font-size: 0.9em;
+    }
+
+    .instagram-icon:hover {
+        color: #7e2ccb;
+        transition: color 0.3s;
+        font-size: 0.9em;
+    }
+
+}
+
+/* Media query for mobile devices */
+@media (max-width: 767px) { /* Adjust this max-width according to your needs */
+    .gallery img {
+        width: 100px; /* Set a fixed width for images */
+        height: 100px; /* Set a fixed height for images to maintain square aspect ratio */
+        max-height: 100px; /* Ensure max-height matches the height */
+        min-height: 100px; /* Ensure min-height matches the height */
+    }
+}
+
+@media (max-width: 900px) {
+    /* Mobile adjustments if any specific requirements arise */
+}

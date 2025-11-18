@@ -1,0 +1,25 @@
+Fixes w/ respective annotations:
+
+1. Ensure that everything (the dropdown menu, decreaseQty & increaseQty + and - buttons, etc.) resets when the page refreshes.
+
+2. The item image and info in the cart are aligned properly.
+
+3. Bring back the previous trash can icon (all solid color).
+
+4. Ensure the arrows and thumbnails click.
+
+5. Ensure the main image slides accordingly when the arrows are clicked.
+
+6. Add the feature to hold and swipe the main image in either direction to get to the other thumbnail.
+
+7. Make everything fully global.
+
+8. Make as many things future proof as possible, and rely on hard coding anything if you must as a backup. Please use the exact same names from my css such as ".pic-main" and not generic names such as "main-image img" as there aren't any "main-image img" parth in my html nor css.
+
+9. Ensure that the checkout button leads to the default stripe checkout link.
+
+10. Ensure the item metric: 10 unique items allowed in the bag at a time only, each w/ a max quantity of 5 only.
+
+11. All items in the bag are still there after refreshing the page. The only way to remove them the bag is to manually dele them, and / or for the user to delete their respective cookies.
+
+Please send the entire javascript ensuring these fixes.

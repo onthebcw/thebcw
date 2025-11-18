@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kucheki — Store</title>
+
+  <!-- styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Stripe (only used client-side) -->
+  <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="/">釦ちぇ木</a>
+    <nav>
+      <ul class="nav-bar">
+        <li class="nav-links"><a href="/">Home</a></li>
+        <li class="nav-links"><a href="/about.html">About</a></li>
+        <li class="nav-links"><a href="/store.html" class="active">Store</a></li>
+      </ul>
+    </nav>
+    <button class="cart-icon" id="openCart" aria-label="Open cart">🛍️ <span class="cart-badge" id="cartBadge">0</span></button>
+  </header>
+
+  <main>
+    <section class="product-grid" id="productGrid" aria-live="polite">
+      <!-- products rendered by app.js -->
+    </section>
+  </main>
+
+  <!-- Cart sidebar -->
+  <aside id="cartSidebar" class="shopping-sidebar" aria-hidden="true">
+    <button class="close" id="closeCart" aria-label="Close cart">×</button>
+    <h2>Your Bag</h2>
+    <div id="cartContents"></div>
+    <div class="cart-footer">
+      <div class="totals">
+        <span>Total:</span> <strong id="cartTotal">$0.00</strong>
+      </div>
+      <button id="checkoutBtn" class="checkout-btn" disabled>Checkout</button>
+    </div>
+  </aside>
+
+  <!-- Toast container -->
+  <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+  <script>
+    // Stripe publishable key placeholder - replace on GitHub Pages or better: inject at build time
+    window.STRIPE_PUBLISHABLE_KEY = "pk_test_YOUR_PUBLISHABLE_KEY";
+    // Backend API base — set to your Vercel function domain later
+    window.API_BASE = "https://YOUR-VERCEL-APP.vercel.app/api";
+  </script>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

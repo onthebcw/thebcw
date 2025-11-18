@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Online store for 釦ちぇ木. Reach out for inquiries.">
+  <title>Store</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="store.css">
+  <link rel="icon" type="image/x-icon" href="../../pics/おいちい.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+  <header class="header">
+    <a href="../../pages/index/index.html" class="logo">釦ちぇ木</a>
+    <nav class="nav">
+      <ul class="nav-bar">
+        <li class="nav-links"><a href="../../pages/index/index.html">Home</a></li>
+        <li class="nav-links"><a href="../../pages/about/about.html">About</a></li>
+        <li class="nav-links"><a href="../../pages/portfolio/portfolio.html">Portfolio</a></li>
+        <li class="nav-links"><a href="../../pages/contacts/contacts.html">Contacts</a></li>
+        <li class="nav-links"><a href="store.html" class="active">Store</a></li>
+        <li class="cart-wrapper">
+          <button class="cart-icon" aria-label="Open Shopping Bag" aria-expanded="false">
+            <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sidebar for the Shopping Cart -->
+  <div id="shoppingSidebar" class="shopping-sidebar" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="close" aria-label="Close shopping cart" onclick="StoreApp.closeCart()">&times;</button>
+    <h2 class="sidebar-header">Your Shopping Bag</h2>
+    <div id="cartContents">
+      <p class="sidebar-paragraph">Your bag is currently empty.</p>
+    </div>
+  </div>
+
+<main>
+  <!-- Hero Banner -->
+  <section class="store-hero">
+    <div class="hero-content">
+      <h1>Welcome to 釦ちぇ木 Store</h1>
+      <p>Discover our collection of e-books, audio, and exclusive bundles</p>
+      <a href="../../pages/store/store.html" class="hero-btn">Shop Now</a>
+    </div>
+    <img src="a-mild-correspondence.png" alt="Store Banner" class="hero-img">
+  </section>
+
+  <!-- Featured Products -->
+  <section class="featured-products">
+    <h2>Featured Products</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="a-mild-correspondence.png" alt="a mild correspondence">
+        <h3>a mild correspondence</h3>
+        <p class="price">$10</p>
+        <a href="../../pages/store/a-mild-correspondence.html" class="fancy-button-2">View Product</a>
+      </div>
+      <div class="product-card">
+        <img src="amc-v2.png" alt="E-Book">
+        <h3>E-Book</h3>
+        <p class="price">$5</p>
+        <a href="../../pages/store/a-mild-correspondence.html" class="fancy-button-2">View Product</a>
+      </div>
+      <div class="product-card">
+        <img src="amc-v3.png" alt="Audio">
+        <h3>Audio</h3>
+        <p class="price">$5</p>
+        <a href="../../pages/store/a-mild-correspondence.html" class="fancy-button-2">View Product</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories / More Products -->
+  <section class="store-categories">
+    <h2>Browse by Category</h2>
+    <div class="categories-grid">
+      <a href="../../pages/store/store.html?category=ebooks" class="category-card">E-Books</a>
+      <a href="../../pages/store/store.html?category=audio" class="category-card">Audio</a>
+      <a href="../../pages/store/store.html?category=bundles" class="category-card">Bundles</a>
+    </div>
+  </section>
+</main>
+
+  <footer>
+    <p>© 2025 釦ちぇ木. All Rights Reserved</p>
+
+    <a href="../../pages/terms/terms.html" class="social-icon terms-icon" aria-label="Terms and Conditions">
+      <i class="fa-solid fa-book" aria-hidden="true"></i>
+    </a>
+
+    <a href="../../pages/privacy policy/privacy policy.html" class="social-icon privacy-policy-icon" aria-label="Privacy Policy">
+      <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+    </a>
+
+    <a href="../../pages/purchase policy/purchase policy.html" class="social-icon purchase-policy-icon" aria-label="Purchase Policy">
+      <i class="fas fa-tags" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://youtube.com/@landon_n_n" target="_blank" rel="noopener noreferrer" class="social-icon youtube-icon"
+      aria-label="YouTube Channel">
+      <i class="fab fa-youtube" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://instagram.com/landon_n_n" target="_blank" rel="noopener noreferrer" class="social-icon instagram-icon"
+      aria-label="Instagram Profile">
+      <i class="fab fa-instagram" aria-hidden="true"></i>
+    </a>
+  </footer>
+
+  <!-- Toast container (must be before scripts) -->
+  <div class="toast-container"></div>
+
+  <!-- GSAP + Main JS -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.1/dist/gsap.min.js" defer></script>
+  <script src="store.js" defer></script>
+</body>
+</html>

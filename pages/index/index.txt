@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Home page for 釦ちぇ木. Reach out for inquiries.">
+    <title>釦ちぇ木</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="../../pics/おいちい.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+
+<body>
+<header class="header">
+    <a href="index.html" class="logo">釦ちぇ木</a>
+    <nav>
+        <ul class="header-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="../../pages/about/about.html">About</a></li>
+            <li><a href="../../pages/portfolio/portfolio.html">Portfolio</a></li>
+            <li><a href="../../pages/contacts/contacts.html">Contacts</a></li>
+            <li><a href="../../pages/store/store.html">Store</a></li>
+            <li class="cart-wrapper">
+                <div class="cart-icon" onclick="openCart();">
+                    <i class="fa-solid fa-bag-shopping cart-icon" alt="Shopping Bag"></i>
+                </div>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Sidebar for the Shopping Cart -->
+<div id="shoppingSidebar" class="shopping-sidebar">
+    <span class="close" onclick="closeCart()">&times;</span>
+    <h2 class="sidebar-header">Your Shopping Bag</h2>
+    <div id="cartContents">
+        <p class="sidebar-paragraph">Your cart is currently empty.</p> <!-- Placeholder for items -->
+    </div>
+</div>
+
+        <div class="content"> <!-- Add this wrapper for content -->
+            <video class="video-banner" autoplay muted loop>
+                <source src="../../pics/1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+
+    <footer>
+        <p>© 2025 釦ちぇ木. All Rights Reserved</p>
+
+    <a href="../../pages/terms/terms.html" alt="Terms" class="social-icon terms-icon" aria-label="Terms and Conditions">
+       <i class="fa-solid fa-book terms-icon" aria-hidden="true"></i>
+    </a>
+
+    <a href="../../pages/privacy policy/privacy policy.html" alt="Privacy Policy" class="social-icon privacy-policy-icon" aria-label="Privacy Policy">
+       <i class="fa-solid fa-file-lines privacy-policy-icon" aria-hidden="true"></i>
+    </a>
+
+    <a href="../../pages/purchase policy/purchase policy.html" alt="Purchase Policy" class="social-icon purchase-policy-icon">
+        <i class="fas fa-tags purchase-policy-icon" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://youtube.com/@landon_n_n" alt="YouTube" target="_blank" rel="noopener noreferrer" class="social-icon youtube-icon" aria-hidden="YouTube Channel">
+        <i class="fab fa-youtube" aria-hidden="true"></i>
+    </a>
+
+    <a href="https://instagram.com/landon_n_n" alt="Instagram" target="_blank" rel="noopener noreferrer" class="social-icon instagram-icon" aria-hidden="Instagram Profile">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+    </a>
+    </footer>
+
+    <script src="script.js" defer></script>
+
+</body>
+</html>

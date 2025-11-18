@@ -1,0 +1,485 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; 
+    margin: 0;  
+}
+
+body {
+    background-color: black;
+    color: white;
+    height: 100vh;
+    padding: 0; /* Removes default body padding */
+}
+
+/* Color Variables */
+:root {
+    --primary-color: white;
+    --hover-link-color: #f0f7ff;
+    --scrolled-link-color: #555;
+    --footer-bg-color: #222;
+    --footer-text-color: white;
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    right: 0;
+    height: 100px; 
+    background-color: rgba(119, 149, 182, 0.25);
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    z-index: 10; 
+    transition: background-color 0.3s; 
+}
+
+.header.scrolled {
+    background-color: rgba(119, 149, 182, 0.2);
+}
+
+/* Logo Styles */
+.logo {
+    text-decoration: none; 
+    color: white; 
+    font-size: 32px; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+    margin-top: -5px; 
+    transition: color 0.3s; 
+}
+
+.header.scrolled .logo {
+    color: black; 
+}
+
+/* Header Navigation Styles */
+.header nav {
+    margin-top: 10px; 
+}
+
+.header nav ul {
+    display: flex; 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.header nav ul li {
+    margin: 0 15px; 
+}
+
+.header nav ul li a {
+    text-decoration: none; /* Remove underline from links */
+    color: #aeaeae;
+    font-weight: bold; /* Bold text */
+    padding: 10px; /* Padding for links */
+    transition: color 0.3s ease; /* Smooth transition for color changes */
+}
+
+.header nav ul li a:hover {
+    color: #f4f9ff; /* Default hover color for all links */
+}
+
+.header nav ul li a.active {
+    color: #d8ebff; /* Active link color */
+}
+
+.header nav ul li a.active:hover {
+    color: #f0f7ff; /* Hover color for the active link */
+}
+
+/* Cart Wrapper Styles */
+.cart-wrapper {
+    display: flex; /* Use flex for layout */
+    align-items: center; /* Center the icon vertically */
+    margin-left: 15px; /* Space between cart icon and other links */
+}
+
+/* Cart Icon Styles */
+.cart-icon {
+    max-width: 40px;
+    max-height: 40px;
+    color: white;
+    transition: transform 0.3s ease;
+    display: flex; /* Use flex to center the icon if needed */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    padding: 0px;
+    position: relative;
+    z-index: 10; /* Raise above other elements */
+    cursor: pointer;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1); /* Grow on hover */
+    color: white;
+}
+
+.cart-icon.active {
+    background-color: rgba(255, 255, 0, 0.2); /* Optional highlight color */
+    border-radius: 5px; /* Optional styling for roundness */
+}
+
+/* Sidebar Styles */
+.shopping-sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 300px; 
+    height: 100%; 
+    background-color: white; 
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5); 
+    padding: 20px; 
+    transition: transform 0.3s ease;
+    transform: translateX(100%); /* Hidden by default */
+    z-index: 100; 
+}
+
+.shopping-sidebar.open {
+    transform: translateX(0); /* Show the sidebar */
+}
+
+.shopping-sidebar .close {
+    cursor: pointer;
+    font-size: 30px;
+    padding: 10px;
+    color: black;
+    background-color: transparent; /* Ensures it's overlaying correctly */
+}
+
+.sidebar-header {
+    color: black;
+    font-size: 1.25em;
+}
+
+.sidebar-paragraph {
+    color: black;
+    font-size: 1em;
+    line-height: 1.4; /* Maintain readability */
+}
+
+#cartContents {
+    margin-top: 20px; /* Space between header and items */
+    font-size: 16px; /* Font size for readability */
+}
+
+#cartContents p {
+    margin: 10px 0; /* Space between items */
+}
+
+#cartContents div {
+    display: flex; /* Horizontally align item name and buttons */
+    justify-content: space-between; /* Space out item details and buttons */
+    align-items: center; /* Vertically align buttons with item text */
+}
+
+#cartContents button {
+    cursor: pointer; /* Change cursor to indicate clickable */
+    background-color: #007bff; /* Example button color */
+    color: white; /* Button text color */
+    border: none; /* Remove default border */
+    padding: 5px 10px; /* Padding for buttons */
+    margin-left: 5px; /* Space between buttons */
+    transition: background-color 0.3s; /* Transition effect on hover */
+}
+
+#cartContents button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Header Navigation Styles continued*/
+.header nav ul li a.scrolled {
+    color: #aeaeae; /* Color for all links when scrolled (except active) */
+}
+
+.header nav ul li a.active.scrolled {
+    color: #555; /* Active link's color when scrolled */
+}
+
+.header nav ul li a.scrolled:hover {
+    color: #007bff; /* Color for all links when scrolled and hovered */
+    font-weight: bold; /* Optionally, make it bold */
+    text-shadow: 0 0 0px rgba(0, 86, 179, 0.7); /* Add a subtle glow effect */
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.line {
+    height: 3px;
+    width: 25px;
+    background: white;
+    margin: 3px 0;
+}
+
+.gallery {
+    display: grid; /* Enables grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Spacing between items */
+    padding: 20px; /* Padding around the gallery for spacing from edges */
+    margin: 0 auto; /* Centers the gallery */
+    width: 90%; /* Responsive width */
+    max-width: 1200px; /* Maximum width for larger screens */
+    margin-top: 120px; /* Add top margin to push down the gallery */
+}
+
+.gallery img {
+    width: 100%; /* Ensures images fill their grid area */
+    height: 200px; /* Maintain aspect ratio */
+    max-height: 200px; /* Set a max height for the images */
+    object-fit: cover; /* Maintains aspect ratio while filling the area */
+    border-radius: 8px; /* Optional: adds rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+/* Lightbox Styles */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Hide overflow */
+    background-color: rgba(0, 0, 0, 0.8); /* Black background with transparency */
+}
+
+.lightbox-content {
+    position: relative;
+    margin: auto;
+    top: 10%;
+    width: 80%; /* Content width */
+    max-width: 700px; /* Max width */
+}
+
+.lightbox-image {
+    width: auto; /* Allow image to adjust width */
+    max-width: 100%; /* Ensure image doesn't exceed lightbox width */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 80vh; /* Adjust max height to fit within the viewport */
+    display: block; /* Make image a block element */
+    margin: auto; /* Center the image */
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Background color on hover */
+}
+
+/* Footer Styles */
+footer {
+    display: flex; 
+    justify-content: center; 
+    background: #333; 
+    padding: 20px; 
+    color: #fff; 
+    width: 100%; /* Full width */
+    min-height: 60px; /* Minimum height to ensure visibility */
+    max-height: 120px; /* Set a maximum height to prevent excessive stretching */
+    overflow: hidden; /* Hide overflow if content exceeds max height */
+}
+
+/* Footer Paragraph Styles */
+footer p {
+    text-decoration: none; 
+    color: white;
+    padding-top: 0; 
+    text-align: center; 
+}
+
+.social-icon {
+    margin-left: 15px; /* Space between icons */
+    margin-top: 1.5px;
+    color: white; /* Icon color */
+    text-decoration: none;
+}
+
+.terms-icon {
+    color: #ffffff;
+}
+
+.terms-icon:hover {
+    color: #917350;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+.privacy-policy-icon {
+    color: #ffffff;
+}
+
+.privacy-policy-icon:hover {
+    color: #629150;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+.purchase-policy-icon {
+    color: #ffffff;
+}
+
+.purchase-policy-icon:hover {
+    color: #4562cb;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+.youtube-icon {
+    color: #ffffff;
+}
+
+.youtube-icon:hover {
+    color: #bf1e1e;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+.instagram-icon {
+    color: #ffffff;
+}
+
+.instagram-icon:hover {
+    color: #7e2ccb;
+    transition: color 0.3s;
+    transform: scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .header nav ul {
+        padding: 0px; /* Add padding for mobile mode */
+    }
+
+    .header nav ul li {
+        margin: 0 5px; /* Decrease spacing between links */
+    }
+
+    .gallery {
+        gap: 10px; /* Reduced spacing in smaller viewports */
+        padding: 10px; /* Less padding for smaller screens */
+        margin-top: 80px; /* Slightly less top margin */
+    }
+
+    .gallery img {
+        max-height: 150px; /* Reduced height for smaller screens */
+    }
+
+    .social-icon {
+        margin-left: 15px; /* Space between icons */
+        margin-top: 2.5px;
+        color: white; /* Icon color */
+        font-size: 0.9em;
+        text-decoration: none;
+    }
+
+    .terms-icon {
+        color: #ffffff;
+        font-size: 0.9em;
+    }
+
+    .terms-icon:hover {
+        color: #917350;
+        transition: color 0.3s;
+        font-size: 0.9em;
+    }
+
+    .privacy-policy-icon {
+        color: #ffffff;
+        font-size: 0.9em;
+    }
+
+    .privacy-policy-icon:hover {
+        color: #629150;
+        transition: color 0.3s;
+        font-size: 0.9em;
+    }
+
+    .purchase-policy-icon {
+        color: #ffffff;
+        font-size: 0.9em;
+    }
+
+    .purchase-policy-icon:hover {
+        color: #4562cb;
+        transition: color 0.3s;
+        font-size: 0.9em;
+    }
+
+    .youtube-icon {
+        color: #ffffff;
+        font-size: 0.9em;
+    }
+
+    .youtube-icon:hover {
+        color: #bf1e1e;
+        transition: color 0.3s;
+        font-size: 0.9em;
+    }
+
+    .instagram-icon {
+        color: #ffffff;
+        font-size: 0.9em;
+    }
+
+    .instagram-icon:hover {
+        color: #7e2ccb;
+        transition: color 0.3s;
+        font-size: 0.9em;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .gallery {
+        padding: 20px; /* Even less padding for very small screens */
+        margin-top: 120px; /* Adjust for even smaller screens */
+        gap: 20px; /* Increase spacing between items for mobile view */
+    }
+
+    .gallery img {
+        height: auto; /* Maintain aspect ratio while limiting height */
+        max-height: 120px; /* Specific smaller max height for very small screens */
+    }
+
+}
+

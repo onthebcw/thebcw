@@ -1,0 +1,79 @@
+                   ┌────────────────────────┐
+                   │      Customer          │
+                   │  (Browser/Device)     │
+                   └─────────┬────────────┘
+                             │
+                  (1) Interacts with website
+                             │
+                             ▼
+                  ┌────────────────────────┐
+                  │    Frontend: GitHub    │
+                  │     Pages (HTML/JS/CSS)│
+                  └─────────┬────────────┘
+                             │
+          (2) Calls backend endpoints via HTTPS
+                             │
+                             ▼
+             ┌─────────────────────────────┐
+             │ Cloudflare Workers (Serverless) │
+             │  - Handles API requests       │
+             │  - Creates Stripe sessions    │
+             │  - Calls Printful API         │
+             │  - Saves orders in KV        │
+             └─────────┬───────────────┘
+                       │
+     ┌─────────────────┴─────────────────┐
+     │                                   │
+     ▼                                   ▼
+┌──────────────┐                  ┌───────────────┐
+│ Stripe API   │                  │ Printful API  │
+│ - Payment    │                  │ - Create orders│
+│   Element    │                  │ - Get catalog │
+│ - QR Codes   │                  │ - Track shipping │
+└──────────────┘                  └───────────────┘
+                       │
+                       ▼
+               ┌─────────────┐
+               │ KV Storage  │
+               │ - Orders    │
+               │ - Sessions  │
+               └─────────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │ Cloudflare DNS  │
+              │ - Domain routing│
+              │ - MX/SPF/DKIM   │
+              └─────────────────┘
+                       │
+                       ▼
+              ┌─────────────────┐
+              │   Titan Email   │
+              │ hi@example.com  │
+              │ - IMAP/SMTP     │
+              │ - Gmail/Apps    │
+              └─────────────────┘
+
+
+
+How it flows in practice:
+
+Customer visits your site (GitHub Pages).
+
+Frontend calls Cloudflare Worker for checkout or order info.
+
+Worker:
+
+Creates a Stripe session (Payment Element or QR code).
+
+If physical product → creates Printful order.
+
+Stores order info in KV.
+
+Stripe handles the payment.
+
+Printful fulfills physical product.
+
+KV stores all order and session info.
+
+Emails sent using Titan (optional confirmations, notifications).

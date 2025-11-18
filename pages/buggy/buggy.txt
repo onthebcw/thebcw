@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Example</title>
+    <link rel="stylesheet" href="file:///C:/やるも/ku/site/css/buggy.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <div id="product-list">
+        <h2>Products</h2>
+        <div>
+            <span>Item 1 - $10.00</span>
+            <button onclick="addToCart('Item 1', 10)">Add to Cart</button>
+        </div>
+        <div>
+            <span>Item 2 - $15.00</span>
+            <button onclick="addToCart('Item 2', 15)">Add to Cart</button>
+        </div>
+        <div>
+            <span>Item 3 - $20.00</span>
+            <button onclick="addToCart('Item 3', 20)">Add to Cart</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 All Rights Reserved</p>
+        <a href="https://www.youryoutubechannel.com" target="_blank" class="social-icon youtube-icon">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="https://www.yourinstagramprofile.com" target="_blank" class="social-icon instagram-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="#" class="social-icon cart-icon" id="cartButton">
+            <i class="fas fa-shopping-cart"></i>
+        </a>
+    </footer>
+
+    <!-- Shopping Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Your Shopping Cart</h2>
+            <div id="cartItems">
+                <!-- Cart items will be displayed here -->
+            </div>
+            <button id="checkoutButton">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script src="file:///C:/やるも/ku/site/js/buggy.js"></script>
+</body>
+</html>

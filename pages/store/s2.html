@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Store page for 釦ちぇ木 Kucheki">
+  <title>Store</title>
+
+  <link rel="stylesheet" href="s2.css">
+  <link rel="icon" type="image/x-icon" href="../../pics/おいちい.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+  <header class="header">
+    <a href="../../pages/index/index.html" class="logo">釦ちぇ木</a>
+    <nav class="nav">
+      <ul class="nav-bar">
+        <li class="nav-links"><a href="../../pages/index/index.html">Home</a></li>
+        <li class="nav-links"><a href="../../pages/about/about.html">About</a></li>
+        <li class="nav-links"><a href="../../pages/portfolio/portfolio.html">Portfolio</a></li>
+        <li class="nav-links"><a href="../../pages/contacts/contacts.html">Contacts</a></li>
+        <li class="nav-links"><a href="s2.html" class="active">Store</a></li>
+        <li class="cart-wrapper">
+          <button class="cart-icon" aria-label="Open Shopping Bag" aria-expanded="false">
+            <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sidebar for the Shopping Cart -->
+  <div id="shoppingSidebar" class="shopping-sidebar" role="dialog" aria-modal="true" aria-hidden="true">
+    <button class="close" aria-label="Close shopping cart" onclick="StoreApp.closeCart()">&times;</button>
+    <h2 class="sidebar-header">Your Shopping Bag</h2>
+    <div id="cartContents">
+      <p class="sidebar-paragraph">Your bag is currently empty.</p>
+    </div>
+  </div>
+
+  <main class="container">
+    <h1>Our Store</h1>
+    <div id="storeGrid" class="store-grid">
+	
+      <!-- 24 placeholder images -->
+      
+	  <section class="store-carousel">
+  <div class="products-wrapper">
+    <!-- 24 blank images -->
+    <div class="product-item" data-index="0"><img src="https://via.placeholder.com/150" alt="Product 1"></div>
+    <div class="product-item" data-index="1"><img src="https://via.placeholder.com/150" alt="Product 2"></div>
+    <div class="product-item" data-index="2"><img src="https://via.placeholder.com/150" alt="Product 3"></div>
+    <div class="product-item" data-index="3"><img src="https://via.placeholder.com/150" alt="Product 4"></div>
+    <div class="product-item" data-index="4"><img src="https://via.placeholder.com/150" alt="Product 5"></div>
+    <div class="product-item" data-index="5"><img src="https://via.placeholder.com/150" alt="Product 6"></div>
+    <div class="product-item" data-index="6"><img src="https://via.placeholder.com/150" alt="Product 7"></div>
+    <div class="product-item" data-index="7"><img src="https://via.placeholder.com/150" alt="Product 8"></div>
+    <div class="product-item" data-index="8"><img src="https://via.placeholder.com/150" alt="Product 9"></div>
+    <div class="product-item" data-index="9"><img src="https://via.placeholder.com/150" alt="Product 10"></div>
+    <div class="product-item" data-index="10"><img src="https://via.placeholder.com/150" alt="Product 11"></div>
+    <div class="product-item" data-index="11"><img src="https://via.placeholder.com/150" alt="Product 12"></div>
+    <div class="product-item" data-index="12"><img src="https://via.placeholder.com/150" alt="Product 13"></div>
+    <div class="product-item" data-index="13"><img src="https://via.placeholder.com/150" alt="Product 14"></div>
+    <div class="product-item" data-index="14"><img src="https://via.placeholder.com/150" alt="Product 15"></div>
+    <div class="product-item" data-index="15"><img src="https://via.placeholder.com/150" alt="Product 16"></div>
+    <div class="product-item" data-index="16"><img src="https://via.placeholder.com/150" alt="Product 17"></div>
+    <div class="product-item" data-index="17"><img src="https://via.placeholder.com/150" alt="Product 18"></div>
+    <div class="product-item" data-index="18"><img src="https://via.placeholder.com/150" alt="Product 19"></div>
+    <div class="product-item" data-index="19"><img src="https://via.placeholder.com/150" alt="Product 20"></div>
+    <div class="product-item" data-index="20"><img src="https://via.placeholder.com/150" alt="Product 21"></div>
+    <div class="product-item" data-index="21"><img src="https://via.placeholder.com/150" alt="Product 22"></div>
+    <div class="product-item" data-index="22"><img src="https://via.placeholder.com/150" alt="Product 23"></div>
+    <div class="product-item" data-index="23"><img src="https://via.placeholder.com/150" alt="Product 24"></div>
+  </div>
+
+  <div class="pagination-arrows">
+    <button class="page-btn prev">←</button>
+    <button class="page-btn next">→</button>
+  </div>
+</section>
+	  
+    </div>
+
+    <div class="pagination">
+      <button id="prevBtn" class="page-btn"><i class="fa-solid fa-arrow-left"></i></button>
+      <span id="pageIndicator">1</span>
+      <button id="nextBtn" class="page-btn"><i class="fa-solid fa-arrow-right"></i></button>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 釦ちぇ木. All Rights Reserved</p>
+  </footer>
+
+  <script src="s2.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+I need your help to take the following javascript and organize the entire thing in this exact way:
+
+
+Overall Section Title: Scroll Function
+
+/* Header Nav Bar */
+
+Function: Changes "header class="header" / .header" to its respective css changes when scrolled (.header.scrolled), and reverts back to its original features when scrolled back to the top (.header).
+
+
+/* Nav Links */
+
+Function: Changes logo and links respectively
+
+- Changes "nav class="nav" / .nav" and its respective parts ("class="logo" / .logo", "nav class="nav bar" / .nav-bar", and "li class="nav-links" / .nav-links") to their respective css properties in their default state (.nav-links a, .nav-links a.active, .nav-links a:hover, .nav-links a.active:hover, ).
+
+- Changes "nav class="nav" / .nav" and its respective parts ("class="logo" / .logo", "nav class="nav bar" / .nav-bar", and "li class="nav-links" / .nav-links") to their respective css properties in their scrolled states (.header.scrolled .nav-links a, .header.scrolled .nav-links a.active, .header.scrolled .nav-links a:hover, .header.scrolled .nav-links a.active:hover).
+
+- Everything here reverts back to their orginal properties when scrolled back to the top.
+
+
+
+
+Overall Section Title: Item Page
+
+
+/* Add to Bag Functions */
+
+Function 1: Main Page + and - Buttons 
+- Clicking "button id="increaseQty"" / "#increaseQty" will increase the quantity.
+- Clicking "button id="decreaseQty"" / ""#decreaseQty will decrease the quantity.
+
+- The actual number "div class="quantity-counter" / #quantity" will increase if you click "button id="increaseQty" / #increaseQty", and it will decrease if you click the "button id="increaseQty" / #increaseQty". This shall reset back to its default number (1) if the page refreshes, and / or if the user deletes their respective cookies, etc.
+
+
+Function 2: Item Quantity Min and Max
+- Only 10 unique items are allowed in the bag at a time.
+
+- The maximum quantity allowed per any item is 5. "div class="quantity-counter" / #quantity" will only go to the number 5 maximum; the main toast "toast.main-toast" will prompt warning the user that they have reached the maximum quantity (5) when "button id="inceaseQty" / #increaseQty" is clicked after any item has reached the quantity 5.
+
+- The minimum quantity allowed per any item is 1. "div class="quantity-counter" / #quantity" will only go to the number 1 minimum; the main toast "toast.main-toast" will prompt up warning the user that they have reached the minimum quantity (1) when "button id="decreaseQty" / #decreaseQty" is clicked after any item has reached the quantity 1.
+
+
+Function 3: Add to Bag Button
+- "button id="addToCartBtn / #addToCartBtn" will successfully add the item along with its quantities chosen to the bag; this will also register the badge icon (.cart-badge) to ONLY show the number that reflects how many unique items have been successfully added to the bag REGARDLESS of how many quantities of that item there are, with the according success toast (toast.success-toast) prompting up to tell the user that the item has successfully been added to the bag. The badge number shall change accordingly depending on the number of unique items that are in the bag REGARDLESS of how many quantities the item has; the badge number shall increase up to a maximum of 10 due to there only being a maximum of 10 unique items allowed in the bag at a time, and shall decrease to a minimum of 1 since the minimum number of items necessary to register the badge is 1; if the bag becomes empty, then the badge number shall disappear.
+
+
+
+
+Overall Section Title: Bag Functions
+
+
+/* Open and Close the Bag */
+
+Function 1: Open Bag
+- Clicking on the bag, or pressing "Enter" on the keyboard shall open the bag.
+
+Function 2: Close Bag
+- Clicking the "x", pressing "Esc" on the keyboard, clicking anywhere on the screen, clicking on any URL link (regardless of what the URL is) and returning back to any page on "this" site, refreshing the page, and / or the user deleting their respective cookies, etc., shall close the bag.
+
+
+
+/* Bag Items */
+
+Function 1: Bag Item Contents & Layout
+- General layout (#cartContents):
+Left (.cart-item-left): .cart-item-img
+Left Middle (.cart-item-left-mid): .cart-item-info (on top) / .cart-item-price (on bottom) stacked vertically
+Right Middle (.cart-item-right-mid): .qty-btn (left and right respectively) and .cart-item-qty (middle) ("-", then ".cart-item-qty, then "+")
+Right (.cart-item-right): .remove-btn w/ its respective prompt (.delete-confirmation), with another trash can as a backup.
+
+- Clicking ".qty-btn" shall NOT reset ".cart-item-qty" when the page refreshes.
+- ALL items in the bag SHALL be reomved from the bag if the user deletes their respective cookies, etc.
+- "toast.success-toast" shall appear after "each item" has been successfully deleted from the bag.
+
+All of these shall be exactly the same "per item" in the bag.
+
+
+
+Function 2: Additional Layout Designs
+- Any additional css that applies here such as a rectangular border around the layout, ..., etc. shall be placed here accordingly and organized neatly PER function (rectangular border, ..., etc.)
+
+
+Function 3: Checkout Button
+
+- ".shopping-sidebar .checkout-btn" shall ALWAYS be underneath the LAST item REGARDLESS of how many items are in the bag.
+
+- Clicking ".shopping-sidebar .checkout-btn" shall pull up its respective prompt, which let's the user know that by clicking it, they'll be redirected to the Stripe checkout.
+
+
+
+Extra things -
+
+- Ensure if possible, that in addition to every applicable respectably part having their own "reset back to default" codes (open / close the bag, quantity counter, etc.), please apply a universal "reset back to default" code as a backup in case each individual "reset back to default" option doesn't work.
+
+- Ensure that everything is future-proof as best as possible, but rely on hard-code where applicable if that respective future-proof part didn't work.
+
+- Ensure that the entire javascript is fully global.
+
+- Ensure that the entire javascript is backed by GSAP where applicable, but rely on non GSAP javascript where applicable.
+
+- Ensure that everything has its respective annotations in their proper places.
+
+
+Please from here on out, organize all parts of my javascript in these exact same ways.
